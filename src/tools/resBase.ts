@@ -12,7 +12,7 @@ export class ReqErr extends Error {
 export class ReqSucc {
 	constructor(
 		public code: number,
-		public data: object,
+		public data: object | null,
 	) {
 		this.code = code;
 		this.data = data;
