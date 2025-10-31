@@ -8,3 +8,7 @@ export class DishCategory {
   @Column()
   name: string;
 }
+
+export type AddDishCategoryDto = Omit<DishCategory, 'id'>;
+
+export type DeleteDishCategoryDto = Pick<DishCategory, 'id'>;

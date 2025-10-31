@@ -6,7 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { DishCategory } from './dish-category.entity';
+import { DishCategory } from '../../dish_categories/entities/dish_categories.entity';
 
 export enum DishType {
   MULTI_SERVING = 'multi_serving',

@@ -3,10 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DishesController } from './dishes.controller';
 import { DishesService } from './dishes.service';
 import { Dish } from './entities/dish.entity';
-import { DishCategory } from './entities/dish-category.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Dish, DishCategory])],
+  imports: [TypeOrmModule.forFeature([Dish])],
   controllers: [DishesController],
   providers: [DishesService],
   exports: [DishesService],
