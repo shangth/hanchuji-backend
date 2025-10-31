@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
+import { IsNotEmpty, IsNumber } from 'class-validator';
 import { CreateGatheringDto } from './create-gathering.dto';
-import { IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
 
 export class UpdateGatheringDto extends PartialType(CreateGatheringDto) {
   @IsNumber()

@@ -3,5 +3,5 @@ import { DishesService } from './dishes.service';
 
 @Controller('dishes')
 export class DishesController {
-  constructor(private readonly dishesService: DishesService) {}
+  constructor(readonly _dishesService: DishesService) {}
 }

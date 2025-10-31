@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { GatheringsService } from './gatherings.service';
-import { GatheringsController } from './gatherings.controller';
-import { Gathering } from './entities/gathering.entity';
 import { ConfirmedDish } from './entities/confirmed-dish.entity';
+import { Gathering } from './entities/gathering.entity';
+import { GatheringsController } from './gatherings.controller';
+import { GatheringsService } from './gatherings.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Gathering, ConfirmedDish])],

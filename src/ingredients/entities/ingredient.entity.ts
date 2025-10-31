@@ -1,7 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { IngredientType } from './ingredient-type.entity';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { IngredientsCategory } from '../../ingredients_categories/entities/ingredients_categories.entity';
 
-@Entity('ingredients_list')
+@Entity('ingredients')
 export class Ingredient {
   @PrimaryGeneratedColumn()
   id: number;
@@ -12,7 +12,13 @@ export class Ingredient {
   @Column({ name: 'type_id' })
   typeId: number;
 
-  @ManyToOne(() => IngredientType)
+  @ManyToOne(() => IngredientsCategory)
   @JoinColumn({ name: 'type_id' })
-  ingredientType: IngredientType;
+  ingredientType: IngredientsCategory;
 }
+
+export type AddIngredientDto = Omit<Ingredient, 'id'>;
+
+export type DeleteIngredientDto = Pick<Ingredient, 'id'>;
+
+export type UpdateIngredientDto = Ingredient;

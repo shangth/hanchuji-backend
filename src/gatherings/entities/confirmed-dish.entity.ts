@@ -1,6 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Gathering } from './gathering.entity';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Dish } from '../../dishes/entities/dish.entity';
+import { Gathering } from './gathering.entity';
 
 @Entity('confirmed_dishes')
 export class ConfirmedDish {

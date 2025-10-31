@@ -1,14 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import type { Repository } from 'typeorm';
 import { Gathering } from './entities/gathering.entity';
 
 @Injectable()
 export class GatheringsService {
-  constructor(
-    @InjectRepository(Gathering)
-    private gatheringRepository: Repository<Gathering>,
-  ) {}
+  constructor(@InjectRepository(Gathering) private gatheringRepository: Repository<Gathering>) {}
 
   async create(createGatheringDto: Partial<Gathering>): Promise<Gathering> {
     const gathering = this.gatheringRepository.create(createGatheringDto);

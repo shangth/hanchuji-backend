@@ -1,9 +1,16 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { DishCategory } from './dish-category.entity';
 
 export enum DishType {
   MULTI_SERVING = 'multi_serving',
-  SINGLE_SERVING = 'single_serving'
+  SINGLE_SERVING = 'single_serving',
 }
 
 @Entity('dishes')
@@ -22,7 +29,7 @@ export class Dish {
 
   @Column({
     type: 'enum',
-    enum: DishType
+    enum: DishType,
   })
   type: DishType;
 

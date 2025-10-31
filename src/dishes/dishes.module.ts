@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DishesService } from './dishes.service';
 import { DishesController } from './dishes.controller';
+import { DishesService } from './dishes.service';
 import { Dish } from './entities/dish.entity';
 import { DishCategory } from './entities/dish-category.entity';
 

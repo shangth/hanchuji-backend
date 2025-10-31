@@ -1,5 +1,5 @@
-import { IsOptional, IsString, IsBoolean, IsDateString } from 'class-validator';
 import { Transform } from 'class-transformer';
+import { IsBoolean, IsDateString, IsOptional, IsString } from 'class-validator';
 
 export class QueryGatheringDto {
   @IsOptional()
@@ -28,10 +28,10 @@ export class QueryGatheringDto {
   endDate?: string;
 
   @IsOptional()
-  @Transform(({ value }) => parseInt(value))
+  @Transform(({ value }) => parseInt(value, 10))
   page?: number = 1;
 
   @IsOptional()
-  @Transform(({ value }) => parseInt(value))
+  @Transform(({ value }) => parseInt(value, 10))
   limit?: number = 10;
 }

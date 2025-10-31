@@ -1,6 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Gathering } from '../../gatherings/entities/gathering.entity';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Dish } from '../../dishes/entities/dish.entity';
+import { Gathering } from '../../gatherings/entities/gathering.entity';
 import { User } from '../../users/entities/user.entity';
 
 @Entity('likes')

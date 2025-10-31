@@ -1,11 +1,18 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query, ParseIntPipe } from '@nestjs/common';
-import { GatheringsService } from './gatherings.service';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+  Put,
+  Query,
+} from '@nestjs/common';
 import { ReqSucc } from '../tools/resBase';
-import { Gathering } from './entities/gathering.entity';
-import { CreateGatheringDto } from './dto/create-gathering.dto';
-import { UpdateGatheringDto } from './dto/update-gathering.dto';
-
-
+import type { CreateGatheringDto } from './dto/create-gathering.dto';
+import type { UpdateGatheringDto } from './dto/update-gathering.dto';
+import { GatheringsService } from './gatherings.service';
 
 @Controller('gatherings')
 export class GatheringsController {
@@ -19,7 +26,7 @@ export class GatheringsController {
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    const gathering = await this.gatheringsService.findOne(parseInt(id));
+    const gathering = await this.gatheringsService.findOne(parseInt(id, 10));
     if (!gathering) {
       return new ReqSucc(404, null);
     }
