@@ -46,6 +46,12 @@ export class Dish {
   createdAt: Date;
 
   @ManyToOne(() => DishCategory)
-  @JoinColumn({ name: 'category' })
+  @JoinColumn({ name: 'category', referencedColumnName: 'id' })
   dishCategory: DishCategory;
 }
+
+export type AddDishDto = Omit<Dish, 'id' | 'createdAt'>;
+
+export type UpdateDishDto = Omit<Dish, 'createdAt'>;
+
+export type DeleteDishDto = Pick<Dish, 'id'>;
